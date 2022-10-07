@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { EnhancementType, Gear, GearRarity, GearType, Range, gearRanges } from '../modals/gear.modals';
 import {Title} from "@angular/platform-browser";
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
 
   gear = Gear.Random();
 
-  constructor(private titleService: Title) {
+  constructor(private titleService: Title, @Inject(APP_BASE_HREF) public baseHref: string) {
     this.titleService.setTitle('ToF Gear Rating');
   }
 
@@ -39,7 +40,7 @@ export class AppComponent {
   }
 
   getGearUri() {
-    return `../assets/images/${GearRarity[this.gear.rarity].toLowerCase()}/${GearType[this.gear.type].toLowerCase()}.webp`;
+    return `${this.baseHref}assets/images/${GearRarity[this.gear.rarity].toLowerCase()}/${GearType[this.gear.type].toLowerCase()}.webp`;
   }
 
   rerollGear() {
