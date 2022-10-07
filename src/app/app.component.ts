@@ -18,7 +18,7 @@ export class AppComponent {
   gear = Gear.Random();
 
   constructor(private titleService: Title, @Inject(APP_BASE_HREF) public baseHref: string) {
-    this.titleService.setTitle('ToF Gear Rating');
+    this.titleService.setTitle('ToF GearChecker');
   }
 
   getRangeLabel(range: Range): string {
