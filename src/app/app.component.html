@@ -1,7 +1,7 @@
 <div class="middle">
   <div class="middle-header">
     <div class="select-wrapper--big">
-      <select class="select--rarity select--big" [(ngModel)]="gear.rarity" (ngModelChange)="rarityChanged()">
+      <select class="select--rarity select--big" [(ngModel)]="gear.rarity" (ngModelChange)="rarityChanged()" [attr.data-selectedValue]="gear.rarity">
         <option
           *ngFor="let rarity of GearRarity | enumToArray"
           [value]="getEnumValue(rarity, GearRarity)"

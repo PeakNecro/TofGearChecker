@@ -174,21 +174,21 @@ option {
 }
 
 .select--rarity {
-  &[ng-reflect-model='0'] {
+  &[data-selectedValue='0'] {
     color: white;
   }
-  &[ng-reflect-model='1'] {
+  &[data-selectedValue='1'] {
     //color: #b1e6c8;
     color: #73c094;
   }
-  &[ng-reflect-model='2'] {
+  &[data-selectedValue='2'] {
     //color: #c3dbff;
     color: #81a2d3;
   }
-  &[ng-reflect-model='3'] {
+  &[data-selectedValue='3'] {
     color: #dfb6ff;
   }
-  &[ng-reflect-model='4'] {
+  &[data-selectedValue='4'] {
     color: #f3e273;
   }
 
