@@ -11,6 +11,7 @@
   &-header {
     margin: 1rem 10% 0;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 
     & > button {
@@ -23,6 +24,7 @@
       border: none;
       border-radius: 3px;
       padding: 0 10px;
+      height: 40px;
       cursor: pointer;
 
       &:active {
@@ -35,6 +37,7 @@
     display: block;
 
     & > img {
+      width: calc(128px + 16%);
       margin: 0 auto;
       display: block;
       position: relative;
@@ -328,7 +331,6 @@ option {
 .footer {
   margin-top: auto;
   background: rgba(75,75,100,0.1);
-  height: 36px;
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -341,5 +343,38 @@ option {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 20px;
+  flex-wrap: wrap;
+
+  & > p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .middle-header {
+    gap: 0.5rem;
+
+    select {
+      font-size: 12px;
+      height: 30px;
+    }
+
+    .select-wrapper--big {
+      flex-grow: 1;
+
+      &::before {
+        top: 6px
+      }
+    }
+
+    > button {
+      margin: 0;
+      font-size: 12px;
+      height: 30px;
+    }
+  }
+
+  picture::before {
+    top: 220px!important;
+  }
 }
